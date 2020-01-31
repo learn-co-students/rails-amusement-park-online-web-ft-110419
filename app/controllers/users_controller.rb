@@ -9,18 +9,19 @@ class UsersController < ApplicationController
         if @user.save
             return head(:forbidden) unless @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            byebug
-            redirect_to users_show_path(@user)
-            # redirect_to users_path
+            redirect_to user_path(@user)
         else
-            redirect_to users_new_path
+            redirect_to new_user_path
         end
       end
 
-    #   def show 
-    #     @user = User.find(params[:id])
-    #   end
+      def show 
+        @user = User.find(params[:id])
+      end
      
+      def index
+      end
+
       private
      
       def user_params
