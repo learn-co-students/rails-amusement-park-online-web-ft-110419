@@ -1,1 +1,7 @@
-attractions index
+<h1> All Attractions </h1>
+
+<ul>
+<% Attraction.all.each do |attr| %>
+    <li><%= attr.name %> - <%= attr.tickets %> tickets - <%= link_to "Go on #{attr.name}", attraction_path(attr) %></li>
+<% end %>
+</ul>

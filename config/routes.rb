@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users
   # resources :sessions
   resources :attractions
+  resources :rides
 
   # get '/signup' => 'users#new'
   # post '/signup' => 'users#create'

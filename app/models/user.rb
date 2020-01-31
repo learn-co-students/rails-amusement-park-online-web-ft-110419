@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
             return "happy"
         end
     end
+
+    def admin?
+        self.admin == true
+    end
 end
