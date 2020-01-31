@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
       def show 
         @user = User.find(params[:id])
+        # @mood = @user.mood
         redirect_to root_path unless session.include? :user_id
       end
      
