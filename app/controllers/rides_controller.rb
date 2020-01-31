@@ -10,7 +10,6 @@ class RidesController < ApplicationController
         @ride.take_ride
 
         redirect_to user_path(@ride.user)
-
     end
 
     private

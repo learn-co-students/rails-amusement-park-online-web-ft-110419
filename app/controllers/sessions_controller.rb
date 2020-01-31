@@ -17,8 +17,16 @@ class SessionsController < ApplicationController
       end
 
         def destroy
+
+          # @user = @user(session[:user_id])
+          # if @user.admin?
             session.delete :user_id
             redirect_to root_path
+          # end
+
+          # else
+
+          # end
         end
     
 

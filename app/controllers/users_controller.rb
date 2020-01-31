@@ -27,8 +27,12 @@ class UsersController < ApplicationController
 
       def show 
         @user = User.find(params[:id])
-        # @mood = @user.mood
         redirect_to root_path unless session.include? :user_id
+        # if @user.rides.last.take_ride == true
+        #   @message = "Thanks for riding the #{@user.rides.last.attraction.name}!"
+        # else
+        #   @message = "test message"
+        # end
       end
      
       def index
