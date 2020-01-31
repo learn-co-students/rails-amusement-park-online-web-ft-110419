@@ -16,4 +16,17 @@ class User < ActiveRecord::Base
     def admin?
         self.admin == true
     end
+
+    def message
+        
+        if self.rides.empty?
+            message = "welcome!"
+        else 
+            message = "#{self.rides.last.take_ride}"
+        end
+    end
 end
+
+# def take_ride
+
+# end

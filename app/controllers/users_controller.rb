@@ -13,15 +13,9 @@ class UsersController < ApplicationController
         if @user.save
             return head(:forbidden) unless @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            # if @user.admin?
-            #   redirect_to user_path(@user)
-            # else
-            #   redirect_to root_path
-            # end
             redirect_to user_path(@user)
         else
             redirect_to new_user_path
-            # redirect_to root_path
         end
       end
 
