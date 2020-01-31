@@ -6,9 +6,8 @@ class RidesController < ApplicationController
 
     def create
         @ride = Ride.new(ride_params)
-        byebug
         @ride.save
-        @message = @ride.take_ride
+        @ride.take_ride
 
         redirect_to user_path(@ride.user)
 
