@@ -26,7 +26,3 @@ class User < ActiveRecord::Base
         end
     end
 end
-
-# def take_ride
-
-# end

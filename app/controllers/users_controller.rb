@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  # before_action :require_login
-  # # skip_before_action :require_login, only: [:new]
-
-
 
     def new
         @user = User.new
@@ -22,11 +18,6 @@ class UsersController < ApplicationController
       def show 
         @user = User.find(params[:id])
         redirect_to root_path unless session.include? :user_id
-        # if @user.rides.last.take_ride == true
-        #   @message = "Thanks for riding the #{@user.rides.last.attraction.name}!"
-        # else
-        #   @message = "test message"
-        # end
       end
      
       def index
@@ -35,7 +26,6 @@ class UsersController < ApplicationController
       private
      
       def user_params
-        # params.require(:user).permit(:name, :password, :password_confirmation, :nausea, :happiness, :tickets, :height, :admin)
         params.require(:user).permit(:name, :password, :nausea, :happiness, :tickets, :height, :admin)
       end
 end
