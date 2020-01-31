@@ -10,7 +10,6 @@ class AttractionsController < ApplicationController
         redirect_to attraction_path(@attraction)
     end
  
- 
     def index
         @attractions = Attraction.all
         @user = User.find(session[:user_id])
@@ -18,6 +17,16 @@ class AttractionsController < ApplicationController
 
     def show
         @attraction = Attraction.find(params[:id])
+        @user = User.find(session[:user_id])
+    end
+
+    def edit
+        @attraction = Attraction.find(params[:id])
+    end
+
+    def update
+        @attraction.update(attraction_params)
+        redirect_to attraction_path(@attraction)
     end
 
     private
