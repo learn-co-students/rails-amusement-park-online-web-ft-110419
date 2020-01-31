@@ -1,5 +1,6 @@
-<%= form_for :user, url: '/signin' do |f| %>
-    Name: <%= f.text_field :name %><br>
-    Password: <%= f.password_field :password %><br>
-    <%= f.submit "Submit" %>
-  <% end %>
+<p>Select your name</p>
+<%= form_tag signin_path do %>
+<%= collection_select :user, :name, User.all, :name, :name, prompt: true %>
+<%= password_field_tag :password %>
+<%= submit_tag "Sign In" %>
+<% end %>
