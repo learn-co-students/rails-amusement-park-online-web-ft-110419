@@ -1,0 +1,4 @@
+<h1> <%= @attraction.name %> </h1>
+<%= button_to "Go on this ride", "/rides/attraction/#{@attraction.id}" , :method => :post %>
+
+<%= link_to "Edit Attraction", edit_attraction_path(@attraction) if current_user.admin %>
