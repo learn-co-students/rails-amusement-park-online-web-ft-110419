@@ -1,0 +1,12 @@
+<h1>All Rides</h1>
+<%if current_user.admin %>
+  <%= link_to "New Attraction", '/attractions/new' %>
+<% end %>
+
+<ul>
+    <% @attractions.each do |attraction| %>
+      <li>  
+        <%= link_to "#{current_user.admin ? "Show" : "Go on" } #{attraction.name}",attraction_path(attraction) %>
+      </li>
+    <% end %>
+</ul>
