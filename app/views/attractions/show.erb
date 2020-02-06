@@ -1,0 +1,10 @@
+<% if logged_in? && current_user.admin %>
+  <a href="/attractions/<%= @attraction.id %>/edit">Edit Attraction</a>
+<% end %>
+
+<h1><%= @attraction.name %></h1>
+<%= form_for @ride do |f| %>
+  <%= f.hidden_field "user_id" %>
+  <%= f.hidden_field "attraction_id" %>
+  <%= f.submit "Go on this ride" %>
+<% end %>
