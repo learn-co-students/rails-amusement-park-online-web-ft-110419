@@ -143,7 +143,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
   before :each do
     @rollercoaster = Attraction.create(
       :name => "Roller Coaster",
-      :tickets => 5,
+      :tickets => 4,
       :nausea_rating => 2,
       :happiness_rating => 4,
       :min_height => 32

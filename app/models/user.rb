@@ -5,11 +5,13 @@ class User < ActiveRecord::Base
     # validates :password, presence: true 
 
     def mood
-        if self.nausea > self.happiness
-            "sad"
-        else 
-            "happy"
-        end 
+        if happiness && nausea
+            happiness > nausea ? "happy" : "sad"
+        end
+    end
+
+    def is_admin?
+        self.admin == true 
     end 
     
 end

@@ -1,10 +1,10 @@
 <%= form_tag signin_path do %>
 
     <label>Name:</label>
-    <%= select_tag 'user[id]', options_from_collection_for_select(User.all, 'id', 'name') %><br>
+    <%= select_tag :user_name, options_from_collection_for_select(User.all, :id, :name) %><br>
 
     <label>Password:</label>
-    <%= password_field_tag :'user[password]' %><br>
+    <%= password_field_tag :password %><br>
 
-    <%= submit_tag "Log In" %>
+    <%= submit_tag "Sign In" %>
 <% end %>
