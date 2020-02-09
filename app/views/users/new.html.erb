@@ -1,0 +1,19 @@
+<h1>Create a New User</h1>
+
+<%= form_for @user do |form| %>
+	<p><%= form.label :name, "Name:" %>
+	<%= form.text_field :name %></p>
+	<p><%= form.label :password, "Password:" %>
+		<%= form.password_field :password %></p>
+	<p><%= form.label :tickets, "Tickets:" %>
+		<%= form.text_field :tickets %></p>
+	<p><%= form.label :height, "Height:" %>
+		<%= form.text_field :height %></p>
+	<p><%= form.label :happiness, "Happiness:" %>
+		<%= form.text_field :happiness %></p>
+	<p><%= form.label :nausea, "Nausea:" %>
+		<%= form.text_field :nausea %></p>
+	<p><%= form.label :admin, "Admin?" %>
+		<%= form.check_box :admin %></p>
+	<p><%= form.submit "Create User" %></p>
+<% end %>

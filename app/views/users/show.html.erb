@@ -1,0 +1,17 @@
+<% flash.each do |key, value| %>
+<h3><%= value %></h3>
+<% end %>
+
+<h3>Name: <%= @user.name %></h3> 
+<h3><%= "Height: #{@user.height}" if @user.height%>
+<h3><%= "Happiness: #{@user.happiness}" if @user.happiness %></h3>
+<h3><%= "Nausea: #{@user.nausea}" if @user.nausea %></h3>
+<h3><%= "Tickets: #{@user.tickets}" if @user.tickets %></h3>
+<h3><%= "Mood: #{@user.mood}" if @user.happiness && @user.nausea %></h3>
+<h3> <% if @user.admin %>
+		ADMIN
+	<% end %>
+</h3>
+
+<p><%= link_to "See attractions", attractions_path %></p>
+<p><%= link_to "Log Out", logout_path %></p>

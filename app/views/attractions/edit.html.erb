@@ -1,0 +1,11 @@
+<% if @errors %>
+	<% @errors.each do |err| %>
+		<%= err %>
+	<% end %>
+<% end %>
+
+<h1>Edit <%= @attraction.name %></h1>
+
+<%= render partial: 'new_attraction_form', locals: {:@attraction => @attraction} %>
+
+	<%= link_to "Show", attraction_path(@attraction) %>

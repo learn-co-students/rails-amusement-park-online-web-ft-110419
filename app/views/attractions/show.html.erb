@@ -1,0 +1,14 @@
+<h1><%= @attraction.name %></h1>
+
+<h3>Tickets Required: <%= @attraction.tickets %></h3>
+
+<h3>Nausea Rating: <%= @attraction.nausea_rating %></h3>
+
+<h3>Happiness Rating: <%= @attraction.happiness_rating %></h3>
+
+<h3>Minimum Height to Ride: <%= (@attraction.min_height ? "#{@attraction.min_height} inches" : "None") %></h3>
+<!-- 
+<%= render partial: 'rides/new_ride_form', locals: {:@ride => @ride, :@attraction => @attraction, :@user => @user} %>
+
+ -->
+<p><%= if_admin(attraction: @attraction, user: @user) %></p>
