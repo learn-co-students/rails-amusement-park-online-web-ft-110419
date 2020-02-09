@@ -1,0 +1,20 @@
+<head><style> 
+	th, td {
+		padding: 15px;
+		border: 1px solid black;
+
+	}
+</style>
+</head>
+<% if @message %>
+<h3><%= @message %></h3>
+<% end %>
+<h1>List of Attractions</h1>
+
+<table>
+	<tr><th>Name</th><th>Tickets</th><th>Details</th></tr>
+	<% @attractions.each do |attr| %>
+		<tr><td><%= attr.name %></td><td><%= attr.tickets %></td><td><%= link_to((@user.admin ? "Show #{attr.name}" : "Go on #{attr.name}"), attraction_path(attr))%></td></tr>
+	<% end %>
+</table>
+<%= if_admin_index(@user) %>

@@ -1,0 +1,8 @@
+
+<h3> Login </h3>
+<p><%= form_tag "/signin", method: :post %>
+<%= label_tag :'user[name]', "Name:" %>
+<%= select_tag :'user[name]', options_from_collection_for_select(User.all, :id, :name), include_blank: true %></p>
+<p><%= label_tag :password, "Password:" %>
+<%= password_field_tag :password %></p>
+<p><%= submit_tag "Sign In" %></p>

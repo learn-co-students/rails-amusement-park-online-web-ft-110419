@@ -1,0 +1,9 @@
+<h1>Buy Tickets</h1>
+
+<%= form_for @user do |f| %>
+	<p><%= f.label :add_tickets, "How Many Tickets Do You Want to Add?" %>
+	<%= f.number_field :add_tickets %></p>
+	<p><%= f.label :height, "Update Your Height" %>
+	<%= f.number_field :height %></p>
+	<p><%= f.submit "Add Tickets and Update Height" %></p>
+<% end %>
