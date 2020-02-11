@@ -1,0 +1,3 @@
+<h1> <%= @attraction.name %> </h1>
+<% byebug%>
+<%= button_to "Go on this ride", "/attractions/#{@attraction.id}/rides" , :method => :post %>

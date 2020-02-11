@@ -1,0 +1,41 @@
+<%= form_tag (action="/users") do %>
+    <div class="field form-group">
+        <label for="user_name">Name: </label>
+        <%= text_field_tag 'user[name]', nil, class: "form-control"%>
+    </div>
+
+    <div class="field form-group">
+        <label for="user_height">Height (in inches)  </label>
+        <%= number_field_tag 'user[height]', nil, class: "form-control", min: 0 %>
+    </div>
+
+    <div class="field form-group">
+        <label for="user_happiness">How happy are you? (1-5 scale)   </label>
+        <%= number_field_tag 'user[happiness]', nil, class: "form-control", min: 0 , max: 5 %>
+    </div>
+
+    <div class="field form-group">
+        <label for="user_nausea">How nauseous are you? (1-5 scale)  </label>
+        <%= number_field_tag 'user[nausea]', nil, class: "form-control", min: 0 , max: 5%>
+    </div>
+
+    <div class="field form-group">
+        <label for="user_tickets">How many dollars are in your pocket? </label>
+        <%= number_field_tag 'user[tickets]',nil, class: "form-control", min: 0%>
+    </div>
+
+    <div class="field form-check">
+        <label for="user_admin">Check box if you are a theme park owner </label>
+        <%= check_box_tag 'user[admin]', nil, false, class: "form-check-input"%>
+    </div><br>
+
+    <div class="field form-group">
+        <label for="user_password">Password: </label>
+        <%= text_field_tag 'user[password]', nil, class: "form-control"%>
+    </div>
+    
+    <div>
+        <%= submit_tag 'Create User', class: 'btn btn-primary' %>
+    </div>
+
+<% end %>
