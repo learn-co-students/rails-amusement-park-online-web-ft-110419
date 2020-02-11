@@ -13,9 +13,8 @@ Rails.application.routes.draw do
   resources :attractions, only: [:show] do
     resources :rides, only: [:show,:create,:new]   
   end
-  resources :rides, only: [:create,:new]
-
-  get 'rides/new'
+  resources :rides, only: [:new,:show]
+  post '/rides', to:"rides#create", as: 'rides'
   # SIGNING 
   get '/signin' => 'users#signin'
   # post '/signin' => 'users#login'
@@ -24,7 +23,8 @@ Rails.application.routes.draw do
   get '--/users/:id' => 'users#show', as: 'user'
 
   #Attractions
-  resources :attractions, only: [:index, :new, :show, :create,:edit, :update]
+  
+  resources :attractions, only: [ :index, :new, :show, :create,:edit, :update]
 
   #STATIC
   root 'statics#home'
