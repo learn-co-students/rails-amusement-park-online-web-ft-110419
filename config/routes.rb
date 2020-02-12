@@ -10,17 +10,17 @@ Rails.application.routes.draw do
   #RIDE 
 
   
-  resources :attractions, only: [:show] do
-    resources :rides, only: [:show,:create,:new]   
-  end
-  resources :rides, only: [:new,:show]
+  # resources :attractions, only: [:show] do
+  #   resources :rides, only: [:show,:create,:new]   
+  # end
+  resources :rides, only: [:new]
   post '/rides', to:"rides#create", as: 'rides'
   # SIGNING 
   get '/signin' => 'users#signin'
   # post '/signin' => 'users#login'
 
   #USER
-  get '--/users/:id' => 'users#show', as: 'user'
+  get '/users/:id' => 'users#show', as: 'user'
 
   #Attractions
   

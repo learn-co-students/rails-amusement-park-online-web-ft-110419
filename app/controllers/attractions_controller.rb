@@ -12,6 +12,7 @@ class AttractionsController < ApplicationController
       redirect_to attraction_path @attraction
   end
   def show
+    @attraction = Attraction.find(params[:id])
   end
   def edit
   end
