@@ -2,26 +2,28 @@ Rails.application.routes.draw do
 
   
   #SESSION / Signup
-  get '/users/new' => 'sessions#new' 
-  post '/users' => 'sessions#create'
+  get '/users/new' => 'users#new'
+  post '/users' => 'users#create'
   delete '/users' => 'sessions#destroy'
-  post '/signin' => 'sessions#login'
-
+  post '/signup' => 'users#create'
+  post '/signin' => 'sessions#create'
+  get '/signin' => 'sessions#new'
+  delete '/logout' => 'sessions#destroy'
   #RIDE 
 
   
   # resources :attractions, only: [:show] do
   #   resources :rides, only: [:show,:create,:new]   
   # end
-  resources :rides, only: [:new]
+  # resources :rides, only: [:new]
+  
   post '/rides', to:"rides#create", as: 'rides'
   # SIGNING 
-  get '/signin' => 'users#signin'
   # post '/signin' => 'users#login'
 
   #USER
   get '/users/:id' => 'users#show', as: 'user'
-
+  
   #Attractions
   
   resources :attractions, only: [ :index, :new, :show, :create,:edit, :update]

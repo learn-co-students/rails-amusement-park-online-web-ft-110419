@@ -1,9 +1,7 @@
-
-<%= form_tag('/session', method: :post) do %>
-
+<%#= form_for(@user) do %>
+<%= form_with(url: "/signin", method: "post") do |f| %>
   <div class="form-group">
     <%= label_tag(:name, "Your name:") %>
-
     <%= collection_select(:user, :name, User.all, :name, :name, prompt: "Please select your username from this dropdown") %>
   </div>
 
@@ -16,4 +14,4 @@
     <%= submit_tag("Sign In") %>
   </div>
 
-<% end %>
+<% end %> 

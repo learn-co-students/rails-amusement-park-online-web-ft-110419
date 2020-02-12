@@ -12,7 +12,10 @@ class AttractionsController < ApplicationController
       redirect_to attraction_path @attraction
   end
   def show
+
     @attraction = Attraction.find(params[:id])
+    @ride = @attraction.rides.build(user_id: current_user.id)
+    
   end
   def edit
   end

@@ -1,13 +1,15 @@
 class RidesController < ApplicationController
   before_action :logged_in?
   include RidesHelper
-  def new
+  # def new
   
-  end
+  # end
   def create
+    
     ride = Ride.create(ride_params)
     message = ride.take_ride
     redirect_to user_path(ride.user), flash: { message: message }
+    
   end
 
 
@@ -17,7 +19,7 @@ class RidesController < ApplicationController
 end
 
   def ride_params
-    byebug
+    
     params.require(:ride).permit(
     :user_id,
     :attraction_id
