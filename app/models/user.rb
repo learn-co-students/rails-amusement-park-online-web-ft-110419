@@ -12,9 +12,9 @@ class User < ActiveRecord::Base
     #     end
     # end
 
-    # def enough_tickets?
-    #     if self.tickets < 200
-    #         errors.add(:tickets, "You do not have enough tickets to to ride the")
-    #     end
-    # end
+    def enough_tickets?
+        if self.tickets < 200
+            errors.add(:tickets, "You do not have enough tickets to to ride the")
+        end
+    end
 end
