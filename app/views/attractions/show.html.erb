@@ -1,0 +1,8 @@
+<%= @attraction.name %> <br>
+<%= @attraction.min_height %> <br>
+<%= @attraction.nausea_rating %> <br>
+<%= form_for current_user do |f| %>
+    <%= f.hidden_field :attractions, :value => @attraction.id %>
+    <%= f.submit "Go on this ride" %>
+<% end %>
+ 

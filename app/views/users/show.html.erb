@@ -5,11 +5,18 @@
     happy:<%= @user.happiness %><br>
 </div> 
 <div> 
-    <%= @user.tickets %><br>
-</div> 
+    Tickets: <%= @user.tickets %>
+</div> <br>
 <div> 
     <%= @user.height %><br>
 </div> 
 <div> 
-   Mood: <%= @user.nausea %><br>
+
+   Mood: sad<br>
 </div> 
+
+ <% @user.attractions do |attract| %>
+        <%= attract.name %>
+<% end %>   
+
+<%= link_to "See attractions", attractions_path %>

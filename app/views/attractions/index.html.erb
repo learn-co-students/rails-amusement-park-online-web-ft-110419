@@ -1,0 +1,15 @@
+<% @attractions.each do |attract| %>
+
+    <div>  <%= attract.name %> </div> <br>
+    
+    <div> 
+        <% attract.rides do |ride| %>
+            <%= ride.title %>
+        <% end %>
+    </div>
+    <div>
+        <%= link_to "Go on #{attract.name}", attraction_path(attract) %> 
+    </div> <br> <br>
+
+<% end %>
+
