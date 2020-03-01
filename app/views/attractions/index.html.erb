@@ -1,0 +1,24 @@
+<% @attractions.each do |attract| %>
+
+    <div>  <%= attract.name %> </div> <br>
+    
+    <div> 
+        <% attract.rides do |ride| %>
+            <%= ride.title %>
+        <% end %>
+    </div>
+    <div>
+            <% if current_user.admin == true %>
+                <%= link_to "Show #{attract.name}", attraction_path(attract) %>
+            <% else %>
+                <%= link_to "Go on #{attract.name}", attraction_path(attract) %>
+            <% end %>
+    </div> <br> <br>
+
+<% end %>
+
+      
+
+<% if current_user.admin == true %>
+  <%= link_to "New Attraction", new_attraction_path %>
+<% end %>

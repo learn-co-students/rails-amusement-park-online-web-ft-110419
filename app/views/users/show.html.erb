@@ -1,0 +1,19 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<p>Mood: <%= @user.mood %></p>
+<div> 
+    <%= @user.name %> <br>
+</div> 
+<div> 
+    happy:<%= @user.happiness %><br>
+</div> 
+<div> 
+    Tickets: <%= @user.tickets %>
+</div> <br>
+<div> 
+   Height: <%= @user.height %><br>
+</div> 
+
+<%= link_to "See attractions", attractions_path %>
