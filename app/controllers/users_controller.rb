@@ -22,13 +22,6 @@ class UsersController < ApplicationController
         end 
     end
     
-    def update 
-        attraction =  Attraction.find_by_id(params[:user][:attractions])
-        tickets_left= current_user.tickets - attraction.tickets 
-        mood = current_user.happiness - attraction.tickets
-        current_user.update(tickets: tickets_left, happiness: mood) 
-        redirect_to user_path(current_user)        
-    end
 
     def destroy     
         session.delete :user_id

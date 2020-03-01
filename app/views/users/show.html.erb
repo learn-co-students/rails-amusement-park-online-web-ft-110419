@@ -1,3 +1,8 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<p>Mood: <%= @user.mood %></p>
 <div> 
     <%= @user.name %> <br>
 </div> 
@@ -8,15 +13,7 @@
     Tickets: <%= @user.tickets %>
 </div> <br>
 <div> 
-    <%= @user.height %><br>
+   Height: <%= @user.height %><br>
 </div> 
-<div> 
-
-   Mood: sad<br>
-</div> 
-
- <% @user.attractions do |attract| %>
-        <%= attract.name %>
-<% end %>   
 
 <%= link_to "See attractions", attractions_path %>
